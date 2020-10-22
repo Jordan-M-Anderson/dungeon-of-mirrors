@@ -8,6 +8,9 @@ public class Player : MonoBehaviour
     public Rigidbody2D rb2d;
     public Animator animator;
     Vector2 movement;
+    public Transform attackPoint;
+    public float attackRange = 0.5f;
+    public LayerMask enemyLayers;
 
     void FixedUpdate()
     {
@@ -22,7 +25,30 @@ public class Player : MonoBehaviour
         animator.SetFloat("Horizontal", movement.x);
         animator.SetFloat("Vertical", movement.y);
         animator.SetFloat("Speed", movement.sqrMagnitude);
+
+        if (Input.GetKeyDown(KeyCode.Space)) {
+
+            Attack();
+
+        }
     }
 
+    void Attack() {
+
+        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
+
+        foreach (Collider2D enemy in hitEnemies) {
+
+        }
+    }
+
+    void OnDrawGizmosSelected()
+    {
+        if (attackPoint == null) {
+            return;
+        }
+
+        Gizmos.DrawWireSphere(attackPoint.position, attackRange);
+    }
 
 }
