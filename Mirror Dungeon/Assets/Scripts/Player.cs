@@ -26,6 +26,31 @@ public class Player : MonoBehaviour
         animator.SetFloat("Vertical", movement.y);
         animator.SetFloat("Speed", movement.sqrMagnitude);
 
+        if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow)) {
+
+            attackPoint.transform.position = rb2d.position + new Vector2(.005f, 0.5f);
+
+        }
+        if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow))
+        {
+
+            attackPoint.transform.position = rb2d.position + new Vector2(.5f, 0.005f);
+
+        }
+        if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow))
+        {
+
+            attackPoint.transform.position = rb2d.position + new Vector2(-.5f, 0.005f);
+
+        }
+
+        if (Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow))
+        {
+
+            attackPoint.transform.position = rb2d.position + new Vector2(.005f, -0.5f);
+
+        }
+
         if (Input.GetKeyDown(KeyCode.Space)) {
 
             Attack();
