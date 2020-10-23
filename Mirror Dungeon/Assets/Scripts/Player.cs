@@ -11,6 +11,7 @@ public class Player : MonoBehaviour
     public Transform attackPoint;
     public float attackRange = 0.5f;
     public LayerMask enemyLayers;
+    public static int health = 2;
 
     void FixedUpdate()
     {
@@ -62,8 +63,9 @@ public class Player : MonoBehaviour
 
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
         animator.SetTrigger("Attack");
-        foreach (Collider2D enemy in hitEnemies) {
 
+        foreach (Collider2D enemy in hitEnemies) {
+            enemy.GetComponent<Enemy>().takeDamage(1);
         }
     }
 
