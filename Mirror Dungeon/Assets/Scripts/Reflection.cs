@@ -10,6 +10,8 @@ public class Reflection : MonoBehaviour
     Vector2 movement;
     float attackRange = 3;
     float directionLength;
+    float nextTimetoAttack = 0;
+    float attackRate = 3;
 
 
     void Start()
@@ -30,14 +32,29 @@ public class Reflection : MonoBehaviour
         // Calculate the magnitude of direction.
         directionLength = Mathf.Sqrt(Mathf.Pow(direction.x, 2) + Mathf.Pow(direction.y, 2));
 
-        direction.Normalize();
-        movement = direction;
-        moveCharacter(movement);
+        // If in range and attack is off cooldown, attack.
+        if (directionLength <= attackRange && nextTimetoAttack < Time.time)
+        {
+            attack();
+            nextTimetoAttack = Time.time + attackRate;
+        }
+        else
+        {
+            // Otherwise move towards the player.
+            direction.Normalize();
+            movement = direction;
+            moveCharacter(movement);
+        }
     }
 
     void moveCharacter(Vector2 direction)
     {
         rb2d.MovePosition((Vector2)transform.position + (direction * speed * Time.deltaTime));
+    }
+
+    void attack()
+    {
+        
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
