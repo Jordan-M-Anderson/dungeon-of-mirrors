@@ -69,6 +69,18 @@ public class Player : MonoBehaviour
         }
     }
 
+    public void Hurt() {
+
+        health--;
+        if (Player.health < 1)
+        {
+            Debug.Log("Game Over");
+            Destroy(gameObject);
+
+        }
+
+    }
+
     void OnDrawGizmosSelected()
     {
         if (attackPoint == null) {

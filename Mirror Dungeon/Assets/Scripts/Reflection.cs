@@ -52,28 +52,12 @@ public class Reflection : MonoBehaviour
     void Attack()
     {
         animator.SetTrigger("Attack");
-        
+
         Collider2D[] hitPlayer = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, playerLayer);
-        
+
         foreach (Collider2D player in hitPlayer)
         {
-            Debug.Log("Hit player");
-            //enemy.GetComponent<Enemy>().takeDamage(1);
-        }
-    }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.tag == "Player")
-        {
-
-            Player.health--;
-            //Destroy(gameObject);
-            if (Player.health < 1)
-            {
-                Debug.Log("Game Over");
-
-            }
+            player.GetComponent<Player>().Hurt();
         }
     }
 }
