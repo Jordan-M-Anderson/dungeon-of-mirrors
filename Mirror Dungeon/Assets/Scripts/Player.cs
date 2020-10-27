@@ -12,6 +12,9 @@ public class Player : MonoBehaviour
     public float attackRange = 0.5f;
     public LayerMask enemyLayers;
     public static int health = 2;
+    public bool blocking = false;
+    public float blockTime;
+    private float timeBlocked;
 
     void FixedUpdate()
     {
@@ -20,41 +23,57 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        movement.x = Input.GetAxisRaw("Horizontal");
-        movement.y = Input.GetAxisRaw("Vertical");
+        if (!blocking) {
+            movement.x = Input.GetAxisRaw("Horizontal");
+            movement.y = Input.GetAxisRaw("Vertical");
 
-        animator.SetFloat("Horizontal", movement.x);
-        animator.SetFloat("Vertical", movement.y);
-        animator.SetFloat("Speed", movement.sqrMagnitude);
+            animator.SetFloat("Horizontal", movement.x);
+            animator.SetFloat("Vertical", movement.y);
+            animator.SetFloat("Speed", movement.sqrMagnitude);
 
-        if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow)) {
+            if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow)) {
 
-            attackPoint.transform.position = rb2d.position + new Vector2(.005f, 0.5f);
+                attackPoint.transform.position = rb2d.position + new Vector2(.005f, 0.5f);
 
+            }
+            if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow))
+            {
+
+                attackPoint.transform.position = rb2d.position + new Vector2(.5f, 0.005f);
+
+            }
+            if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow))
+            {
+
+                attackPoint.transform.position = rb2d.position + new Vector2(-.5f, 0.005f);
+
+            }
+
+            if (Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow))
+            {
+
+                attackPoint.transform.position = rb2d.position + new Vector2(.005f, -0.5f);
+
+            }
+
+
+            if (Input.GetKeyDown(KeyCode.Space)) {
+
+                Attack();
+
+            } else if (Input.GetKeyDown(KeyCode.LeftShift)) {
+
+                Block();
+
+            }
         }
-        if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow))
+
+        if (timeBlocked < Time.time)
         {
 
-            attackPoint.transform.position = rb2d.position + new Vector2(.5f, 0.005f);
-
-        }
-        if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow))
-        {
-
-            attackPoint.transform.position = rb2d.position + new Vector2(-.5f, 0.005f);
-
-        }
-
-        if (Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow))
-        {
-
-            attackPoint.transform.position = rb2d.position + new Vector2(.005f, -0.5f);
-
-        }
-
-        if (Input.GetKeyDown(KeyCode.Space)) {
-
-            Attack();
+            blocking = false;
+            speed = 2.5f;
+            animator.SetBool("Blocking", false);
 
         }
     }
@@ -71,7 +90,11 @@ public class Player : MonoBehaviour
 
     public void Hurt() {
 
-        health--;
+        if (!blocking)
+        {
+            health--;
+        }
+
         if (health < 1)
         {
             Debug.Log("Game Over");
@@ -88,6 +111,15 @@ public class Player : MonoBehaviour
         }
 
         Gizmos.DrawWireSphere(attackPoint.position, attackRange);
+    }
+
+    void Block()
+    {
+        speed = 0;
+        blocking = true;
+        timeBlocked = Time.time + blockTime;
+        animator.SetBool("Blocking", true);
+
     }
 
 }
