@@ -23,7 +23,6 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        if (!blocking) {
             movement.x = Input.GetAxisRaw("Horizontal");
             movement.y = Input.GetAxisRaw("Vertical");
 
@@ -66,7 +65,7 @@ public class Player : MonoBehaviour
                 Block();
 
             }
-        }
+        
 
         if (timeBlocked < Time.time)
         {
@@ -115,7 +114,7 @@ public class Player : MonoBehaviour
 
     void Block()
     {
-        speed = 0;
+        speed = speed/2;
         blocking = true;
         timeBlocked = Time.time + blockTime;
         animator.SetBool("Blocking", true);

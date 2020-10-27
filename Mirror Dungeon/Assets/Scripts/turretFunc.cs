@@ -14,7 +14,6 @@ public class turretFunc : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
     }
     // Update is called once per frame
     void Update()
@@ -30,6 +29,7 @@ public class turretFunc : MonoBehaviour
     }
     void shoot()
     {
+        Vector2 shoot = Shootpoint.position;
         GameObject BulletIns = Instantiate(bullet, Shootpoint.position, Quaternion.identity);
         BulletIns.GetComponent<Rigidbody2D>().AddForce(Direction * Force);
     }
