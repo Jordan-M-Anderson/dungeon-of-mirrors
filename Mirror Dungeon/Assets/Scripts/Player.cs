@@ -72,10 +72,10 @@ public class Player : MonoBehaviour
     public void Hurt() {
 
         health--;
-        if (Player.health < 1)
+        if (health < 1)
         {
             Debug.Log("Game Over");
-            Destroy(gameObject);
+            Time.timeScale = 0;
 
         }
 

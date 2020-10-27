@@ -24,11 +24,7 @@ public class Glass : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player") {
 
-            Player.health--;
-            if (Player.health < 1) {
-                Debug.Log("Game Over");
-
-            }
+            collision.GetComponent<Player>().Hurt();
         }
 
         if (collision.gameObject.layer != 8) {
