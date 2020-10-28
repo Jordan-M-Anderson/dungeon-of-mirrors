@@ -55,6 +55,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -3377392694863607063, guid: 1bd4f44db9bd7294e8b7341f3f243fd5, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7283198520731159170, guid: 1bd4f44db9bd7294e8b7341f3f243fd5, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.5
@@ -105,7 +109,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7283198520731159183, guid: 1bd4f44db9bd7294e8b7341f3f243fd5, type: 3}
       propertyPath: m_Name
-      value: Mirror_Elemental_0
+      value: Mirror_Elemental_0 Variant
       objectReference: {fileID: 0}
     - target: {fileID: 7283198520731159183, guid: 1bd4f44db9bd7294e8b7341f3f243fd5, type: 3}
       propertyPath: m_Layer

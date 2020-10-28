@@ -96,7 +96,7 @@ public class Player : MonoBehaviour
 
         if (health < 1)
         {
-            Debug.Log("Game Over");
+            FindObjectOfType<GameManager>().EndGame();
             Time.timeScale = 0;
 
         }

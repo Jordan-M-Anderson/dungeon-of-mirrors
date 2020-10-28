@@ -40,7 +40,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7283198520731159170}
   - component: {fileID: 7283198520731159181}
-  - component: {fileID: 7283198520731159180}
+  - component: {fileID: -3377392694863607063}
   m_Layer: 0
   m_Name: Mirror_Elemental_0
   m_TagString: Untagged
@@ -114,7 +114,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &7283198520731159180
+--- !u!114 &-3377392694863607063
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -128,6 +128,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Target: {fileID: 0}
   bullet: {fileID: 591935566740017990, guid: 96d9141b9a95ce242839304c63f30fa6, type: 3}
-  FireRate: 0.5
+  FireRate: 1
   Shootpoint: {fileID: 7283198520453746389}
   Force: 75

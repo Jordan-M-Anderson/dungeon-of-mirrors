@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-public class turretFunc : MonoBehaviour
+public class turretFuncTutorial : MonoBehaviour
 { 
     public Transform Target;
     Vector2 Direction;
@@ -14,7 +14,6 @@ public class turretFunc : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Target = FindObjectOfType<Player>().transform;
     }
     // Update is called once per frame
     void Update()
