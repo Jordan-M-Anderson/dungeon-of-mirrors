@@ -15,7 +15,8 @@ public class Player : MonoBehaviour
     public bool blocking = false;
     public float blockTime;
     private float timeBlocked;
-
+    public AudioSource audio;
+    public AudioClip hurt;
     void FixedUpdate()
     {
         rb2d.MovePosition(rb2d.position + movement * speed * Time.fixedDeltaTime);
@@ -92,6 +93,7 @@ public class Player : MonoBehaviour
         if (!blocking)
         {
             health--;
+            audio.PlayOneShot(hurt);
         }
 
         if (health < 1)
