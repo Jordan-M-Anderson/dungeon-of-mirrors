@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: 6414328307233873086}
   - component: {fileID: -6190064180726776847}
   m_Layer: 8
-  m_Name: Mirror_Elemental_0
+  m_Name: Mirror_Elemental_0 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -106,7 +106,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: -2510476293373519475, guid: d9567f412a700dd4f96110db472de82f, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.8647928, g: 0.8773585, b: 0.39315593, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -129,7 +129,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Target: {fileID: 2826303848914445650, guid: abf183bdb3b416744ae758487e7dc2bc, type: 3}
-  bullet: {fileID: 591935566740017990, guid: 96d9141b9a95ce242839304c63f30fa6, type: 3}
+  bullet: {fileID: 591935566740017990, guid: 9cfd7b0b11e994b4c9c2e925cbcf8120, type: 3}
   FireRate: 0.5
   Shootpoint: {fileID: 7283198520453746389}
   Force: 75

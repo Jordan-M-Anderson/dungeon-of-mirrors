@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2569161212156292317}
   - component: {fileID: 787082309021156073}
   m_Layer: 8
-  m_Name: Mirror_Projectile
+  m_Name: Mirror_Projectile 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -75,7 +75,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 8c411398fd47274478b5c0a1dbcbb516, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.8584906, g: 0.81166923, b: 0.4008989, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
