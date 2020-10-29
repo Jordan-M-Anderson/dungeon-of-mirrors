@@ -3180,8 +3180,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 0.15, y: 0.28}
+  m_Offset: {x: 0.010951936, y: -0.16610509}
+  m_Size: {x: 0.25951993, y: 0.45158088}
   m_Direction: 0
 --- !u!1001 &147627054694690188
 PrefabInstance:
@@ -3400,6 +3400,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2826303848914445650, guid: abf183bdb3b416744ae758487e7dc2bc, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2826303848914445650, guid: abf183bdb3b416744ae758487e7dc2bc, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2826303848914445651, guid: abf183bdb3b416744ae758487e7dc2bc, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -716794243909687941, guid: f484dfbfc9de58447800c2685ac0249e, type: 3}
     - target: {fileID: 2826303848914445652, guid: abf183bdb3b416744ae758487e7dc2bc, type: 3}
       propertyPath: m_Name
       value: Player
