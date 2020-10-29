@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour
         gameHasEnded = true;
         if (gameHasEnded)
         {
-            Debug.Log("GameOver");
+            Player.health = 2;
             RestartMenu();
         }
 
