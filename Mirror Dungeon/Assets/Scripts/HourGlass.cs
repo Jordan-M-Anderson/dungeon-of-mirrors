@@ -1,18 +1,21 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using UnityEngine.SceneManagement;
 using UnityEngine;
 
 public class HourGlass : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
+    public GameObject myGameObj;
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        
+        if (Input.GetKey(KeyCode.E))
+        {
+            if (myGameObj.GetComponent<Interactable>().canInteract)
+            {
+
+                SceneManager.LoadScene("Sand");
+
+            }
+
+        }
     }
 }

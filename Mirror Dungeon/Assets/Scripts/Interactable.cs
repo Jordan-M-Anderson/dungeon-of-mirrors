@@ -5,6 +5,7 @@ using UnityEngine;
 public class Interactable : MonoBehaviour
 {
     public bool canInteract = false;
+    public GameObject pressE;
 
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -12,6 +13,7 @@ public class Interactable : MonoBehaviour
         if (other.gameObject.tag == "Player")
         {
             canInteract = true;
+            pressE.SetActive(true);
         }
     }
 
@@ -20,6 +22,7 @@ public class Interactable : MonoBehaviour
         if (other.gameObject.tag == "Player")
         {
             canInteract = false;
+            pressE.SetActive(false);
         }
     }
 }
