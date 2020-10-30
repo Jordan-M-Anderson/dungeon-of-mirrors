@@ -7,6 +7,8 @@ public class Enemy : MonoBehaviour
 
     public int maxHealth;
     public static int health;
+    public AudioSource audio;
+    public AudioClip hurt;
 
     // Start is called before the first frame update
     void Start()
@@ -24,6 +26,8 @@ public class Enemy : MonoBehaviour
     {
 
         health -= damage;
+        audio.PlayOneShot(hurt);
+        
         if (health < 1)
         {
 

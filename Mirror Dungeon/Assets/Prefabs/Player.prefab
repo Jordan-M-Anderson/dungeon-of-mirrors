@@ -197,6 +197,7 @@ MonoBehaviour:
   blockTime: 1
   audio: {fileID: 3000577808437009780}
   hurt: {fileID: 8300000, guid: 5308f19b80110d04c9cf5664c9961e92, type: 3}
+  key: {fileID: 0}
 --- !u!50 &2826303848914445649
 Rigidbody2D:
   serializedVersion: 4
@@ -340,11 +341,11 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 6c8436a191dfb6a4b9781ba5a8b5d2e6, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0

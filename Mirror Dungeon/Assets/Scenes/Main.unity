@@ -4010,7 +4010,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1440671210
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6214,6 +6214,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 3000577808437009780, guid: abf183bdb3b416744ae758487e7dc2bc, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3000577808437009780, guid: abf183bdb3b416744ae758487e7dc2bc, type: 3}
+      propertyPath: Loop
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3000577808437009780, guid: abf183bdb3b416744ae758487e7dc2bc, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 5308f19b80110d04c9cf5664c9961e92, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: abf183bdb3b416744ae758487e7dc2bc, type: 3}
 --- !u!1001 &5749477419630491420
@@ -6226,7 +6238,7 @@ PrefabInstance:
     - target: {fileID: 5749477418422620228, guid: 308c53e9278229643908e3bcfe4cab4b, type: 3}
       propertyPath: gameOver
       value: 
-      objectReference: {fileID: 1104085256}
+      objectReference: {fileID: 142009952}
     - target: {fileID: 5749477418422620229, guid: 308c53e9278229643908e3bcfe4cab4b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

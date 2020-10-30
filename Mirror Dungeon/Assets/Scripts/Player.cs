@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 
 public class Player : MonoBehaviour
@@ -17,6 +18,7 @@ public class Player : MonoBehaviour
     private float timeBlocked;
     public AudioSource audio;
     public AudioClip hurt;
+    public GameObject key;
     void FixedUpdate()
     {
         rb2d.MovePosition(rb2d.position + movement * speed * Time.fixedDeltaTime);
@@ -85,6 +87,11 @@ public class Player : MonoBehaviour
 
         foreach (Collider2D enemy in hitEnemies) {
             enemy.GetComponent<Enemy>().takeDamage(1);
+            if (SceneManager.GetActiveScene().name == "Sand") {
+
+                key.GetComponent<KeyVictory>().killEnemey();
+
+            }
         }
     }
 
@@ -99,7 +106,7 @@ public class Player : MonoBehaviour
         if (health < 1)
         {
             FindObjectOfType<GameManager>().EndGame();
-            Time.timeScale = 0;
+            Time.timeScale = 0f;
 
         }
 
