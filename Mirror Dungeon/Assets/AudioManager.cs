@@ -8,6 +8,7 @@ public class AudioManager : MonoBehaviour
     private int firstPlayInt;
     public Slider VolumeSlider;
     private float VolumeFloat;
+    public AudioSource VolumeAudio;
 
     void Start()
     {
@@ -23,12 +24,14 @@ public class AudioManager : MonoBehaviour
         else
         {
             VolumeFloat = PlayerPrefs.GetFloat(VolumePref);
+            VolumeSlider.value = VolumeFloat;
         }
     }
 
     public void SaveSoundSettings()
     {
         PlayerPrefs.SetFloat(VolumePref, VolumeSlider.value);
+        UpdateSound();
     }
 
     private void OnApplicationFocus(bool focus)
@@ -38,4 +41,10 @@ public class AudioManager : MonoBehaviour
             SaveSoundSettings();
         }
     }
+    
+    public void UpdateSound()
+    {
+        VolumeAudio.volume = VolumeSlider.value;
+    }
+    
 }
