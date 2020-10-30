@@ -1411,6 +1411,7 @@ GameObject:
   - component: {fileID: 374441791}
   - component: {fileID: 374441790}
   - component: {fileID: 374441789}
+  - component: {fileID: 374441792}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -1500,6 +1501,20 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!114 &374441792
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 374441787}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f47c2a39993cfe46814e0657ff6521a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  VolumeSlider: {fileID: 1795017676}
+  VolumeAudio: {fileID: 2826303847758012880}
 --- !u!1 &396104249
 GameObject:
   m_ObjectHideFlags: 0
@@ -4010,7 +4025,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1440671210
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5272,7 +5287,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1948777785}
+      - m_Target: {fileID: 374441792}
         m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
         m_MethodName: SaveSoundSettings
         m_Mode: 1
@@ -5661,7 +5676,6 @@ GameObject:
   - component: {fileID: 1948777782}
   - component: {fileID: 1948777784}
   - component: {fileID: 1948777783}
-  - component: {fileID: 1948777785}
   m_Layer: 5
   m_Name: PauseMenuBackground
   m_TagString: Untagged
@@ -5728,19 +5742,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1948777781}
   m_CullTransparentMesh: 0
---- !u!114 &1948777785
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1948777781}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8f47c2a39993cfe46814e0657ff6521a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  VolumeSlider: {fileID: 1795017676}
 --- !u!1 &1970728662
 GameObject:
   m_ObjectHideFlags: 0
@@ -6216,6 +6217,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: abf183bdb3b416744ae758487e7dc2bc, type: 3}
+--- !u!82 &2826303847758012880 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 3000577808437009780, guid: abf183bdb3b416744ae758487e7dc2bc, type: 3}
+  m_PrefabInstance: {fileID: 2826303847758012879}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &5749477419630491420
 PrefabInstance:
   m_ObjectHideFlags: 0
