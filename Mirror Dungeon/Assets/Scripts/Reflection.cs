@@ -21,7 +21,7 @@ public class Reflection : MonoBehaviour
         rb2d = this.GetComponent<Rigidbody2D>();
     }
 
-    void Update()
+    void FixedUpdate()
     {
         // Find the position of the player relative to the enemy's position.
         Vector3 direction = (player.position - transform.position);
