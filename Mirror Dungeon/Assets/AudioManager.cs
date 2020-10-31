@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using System.Collections;
 
 public class AudioManager : MonoBehaviour
 {
@@ -8,7 +9,7 @@ public class AudioManager : MonoBehaviour
     private int firstPlayInt;
     public Slider VolumeSlider;
     private float VolumeFloat;
-    public AudioSource VolumeAudio;
+    public AudioSource[] VolumeAudio;
 
     void Start()
     {
@@ -44,7 +45,11 @@ public class AudioManager : MonoBehaviour
     
     public void UpdateSound()
     {
-        VolumeAudio.volume = VolumeSlider.value;
+        for (int i = 0; i < VolumeAudio.Length; i++)
+        {
+            VolumeAudio[i].volume = VolumeSlider.value;
+        }
+        
     }
     
 }

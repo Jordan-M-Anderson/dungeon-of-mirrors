@@ -544,6 +544,11 @@ PrefabInstance:
       objectReference: {fileID: 2128386868}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0804b20b1cf482b429beca63a2474e97, type: 3}
+--- !u!82 &117012120 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 7125738083495492482, guid: 0804b20b1cf482b429beca63a2474e97, type: 3}
+  m_PrefabInstance: {fileID: 117012119}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &121667038
 GameObject:
   m_ObjectHideFlags: 0
@@ -1514,7 +1519,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   VolumeSlider: {fileID: 1795017676}
-  VolumeAudio: {fileID: 2826303847758012880}
+  VolumeAudio:
+  - {fileID: 1858989110}
+  - {fileID: 117012120}
+  - {fileID: 2826303847758012880}
+  - {fileID: 2826303847758012880}
 --- !u!1 &396104249
 GameObject:
   m_ObjectHideFlags: 0
@@ -5417,6 +5426,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1bd4f44db9bd7294e8b7341f3f243fd5, type: 3}
+--- !u!82 &1858989110 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 4902554140831707171, guid: 1bd4f44db9bd7294e8b7341f3f243fd5, type: 3}
+  m_PrefabInstance: {fileID: 1858989109}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1859764082
 GameObject:
   m_ObjectHideFlags: 0
