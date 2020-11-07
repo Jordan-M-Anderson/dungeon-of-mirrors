@@ -32,7 +32,7 @@ public class turretFunc : MonoBehaviour
     {
         Vector2 shoot = Shootpoint.position;
         GameObject BulletIns = Instantiate(bullet, Shootpoint.position, Quaternion.identity);
-        BulletIns.GetComponent<Rigidbody2D>().AddForce(Direction * Force);
+        BulletIns.GetComponent<Rigidbody2D>().AddForce((Direction / Direction.magnitude) * Force);
     }
 
 

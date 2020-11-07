@@ -15,6 +15,8 @@ public class Player : MonoBehaviour
     public static int health = 2;
     public bool blocking = false;
     public float blockTime;
+    float blockInterval = 2;
+    float nextBlockTime = 0;
     private float timeBlocked;
     public AudioSource audio;
     public AudioClip hurt;
@@ -65,8 +67,12 @@ public class Player : MonoBehaviour
 
             } else if (Input.GetKeyDown(KeyCode.LeftShift)) {
 
-                Block();
-
+                if (nextBlockTime < Time.time)
+                {
+                    nextBlockTime = Time.time + blockInterval;
+                    Block();
+                }
+            
             }
         
 
