@@ -260,7 +260,7 @@ MonoBehaviour:
   bullet: {fileID: 591935566740017990, guid: 96d9141b9a95ce242839304c63f30fa6, type: 3}
   FireRate: 0.5
   Shootpoint: {fileID: 7283198520453746389}
-  Force: 75
+  Force: 100
 --- !u!114 &6414328307233873086
 MonoBehaviour:
   m_ObjectHideFlags: 0
