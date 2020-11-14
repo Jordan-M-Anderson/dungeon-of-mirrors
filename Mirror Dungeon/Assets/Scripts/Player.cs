@@ -8,11 +8,13 @@ public class Player : MonoBehaviour
     public float speed = 5f;
     public Rigidbody2D rb2d;
     public Animator animator;
+    public HealthBar healthBar;
     Vector2 movement;
     public Transform attackPoint;
     public float attackRange = 0.5f;
     public LayerMask enemyLayers;
-    public static int health = 2;
+    public static int maxHealth = 3;
+    public static int health;
     public bool blocking = false;
     public float blockTime;
     float blockInterval = 2;
@@ -21,6 +23,17 @@ public class Player : MonoBehaviour
     public AudioSource audio;
     public AudioClip hurt;
     public GameObject key;
+
+    void Start()
+    {
+        if (SceneManager.GetActiveScene().name == "Main")
+        {
+            health = maxHealth;
+        }
+        
+        healthBar.SetHealth(health);
+    }
+
     void FixedUpdate()
     {
         rb2d.MovePosition(rb2d.position + movement * speed * Time.fixedDeltaTime);
@@ -106,6 +119,7 @@ public class Player : MonoBehaviour
         if (!blocking)
         {
             health--;
+            healthBar.SetHealth(health);
             audio.PlayOneShot(hurt);
         }
 
